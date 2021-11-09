@@ -110,6 +110,12 @@
       transform: translate(0, -100%);
     }
   }
+
+  @media screen and (min-width: 1700px) {
+    nav {
+      padding: 0 80px;
+    }
+  }
 }
 
 @keyframes slide-1 {
