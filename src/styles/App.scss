@@ -15,6 +15,9 @@ $background-color-2: #23252c;
 }
 
 @import "Home";
+@import "Card";
+@import "Footer";
+@import "Nav";
 
 * {
   margin: 0;
@@ -45,5 +48,15 @@ h4 {
 }
 
 p {
+  color: $text-color-2;
+}
+
+button {
+  border: none;
+  background-color: $primary-color;
+  color: $text-color-2;
+}
+
+h5 {
   color: $text-color-2;
 }

@@ -1,51 +1,22 @@
-.head {
-  min-height: 10vh;
-  .container {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    min-height: 10vh;
-    background-color: $background-color-2;
-    border-bottom: 4px solid rgba(255, 255, 255, 0.048);
-    @include flex(flex-start, center);
-    nav {
-      width: 90%;
-      margin: auto;
-      @include flex(flex-start, center);
-    }
-    h1 {
-      flex: 5 1 40rem;
-      letter-spacing: 0.4rem;
-      user-select: none;
-      font-family: "Pacifico", cursive;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    ul {
-      flex: 1 1 40rem;
-      @include flex(space-around, center);
-    }
-    a {
-      font-weight: 700;
-      letter-spacing: 0.2rem;
-      text-transform: uppercase;
-      color: $primary-color;
-      display: block;
-      padding: 1.1rem 0.8rem;
-
-      &:hover {
-        color: $text-color-2;
-        background-color: $primary-color;
-        border-radius: 40px;
-        transition: all 1s ease-out;
-      }
-    }
-  }
-}
-
 .home {
   min-height: 90vh;
   background-color: $background-color-1;
+
+  section {
+    width: 90%;
+    margin: auto;
+  }
+
+  .home-games {
+    position: relative;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+    transition: all 1s ease-in;
+
+    @media screen and (max-width: 650px) {
+      grid-gap: none;
+    }
+  }
 }

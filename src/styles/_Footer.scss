@@ -1,0 +1,35 @@
+footer {
+  min-height: 7vh;
+  background-color: $background-color-2;
+  @include flex(flex-start, center);
+  section {
+    width: 90%;
+    margin: auto;
+    @include flex(flex-start, center);
+  }
+  h5 {
+    flex: 5 1 60rem;
+    font-size: 1.3rem;
+    span {
+      color: $primary-color;
+    }
+  }
+  ul {
+    flex: 1 1 20rem;
+    font-size: 1.5rem;
+    color: $primary-color;
+    @include flex(space-around, center);
+  }
+  li {
+    &:hover {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      color: $text-color-2;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    ul {
+      flex: 1 1 40rem;
+    }
+  }
+}

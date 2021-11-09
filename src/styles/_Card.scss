@@ -1,0 +1,98 @@
+.card {
+  min-height: 40vh;
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  animation: inAnimation 0.3s ease-in-out forwards;
+  opacity: 0;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.9;
+    object-fit: cover;
+  }
+
+  button {
+    position: absolute;
+    z-index: 11;
+    bottom: -100%;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1.6rem 0;
+    opacity: 1;
+    cursor: pointer;
+
+    &:active {
+      transition: background-color 0.3s ease;
+      background-color: #273296;
+    }
+  }
+
+  .content {
+    @include flex(center, center, column);
+    text-align: center;
+    height: 100%;
+    opacity: 0;
+    h3 {
+      color: $text-color-2;
+      font-weight: bold;
+      margin-bottom: 0.6rem;
+    }
+    h5 {
+      font-weight: 200;
+      span {
+        color: rgba(255, 255, 255, 0.822);
+      }
+    }
+  }
+
+  &:hover {
+    border: 2px solid $primary-color;
+    transition: all 0.6s ease;
+    img {
+      transition: opacity 0.3s ease-in;
+      opacity: 0.2;
+    }
+    button {
+      transition: bottom 0.6s ease;
+      bottom: 0;
+
+      //   opacity: 1;
+    }
+    .content {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    img {
+      transition: opacity 0.3s ease-in;
+      opacity: 0.3;
+    }
+    button {
+      padding: 1.1rem 0;
+      bottom: 0;
+    }
+    .content {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@for $i from 1 through 10 {
+  .home-games .card:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.3}s;
+  }
+}

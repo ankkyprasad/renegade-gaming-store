@@ -1,0 +1,122 @@
+.head {
+  min-height: 10vh;
+
+  .container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    min-height: 10vh;
+    background-color: $background-color-2;
+    // border-bottom: 4px solid rgba(255, 255, 255, 0.048);
+    z-index: 100;
+    @include flex(flex-start, center);
+
+    .loading {
+      height: 4px;
+      background-color: $primary-color;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      animation: slide-1 2s ease-in-out forwards;
+    }
+    nav {
+      width: 90%;
+      margin: auto;
+      @include flex(flex-start, center);
+    }
+    h1 {
+      flex: 5 1 40rem;
+      letter-spacing: 0.4rem;
+      user-select: none;
+      font-family: "Pacifico", cursive;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    ul {
+      flex: 1 1 40rem;
+      @include flex(space-around, center);
+    }
+    a {
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      color: $primary-color;
+      display: block;
+      padding: 1.1rem 0.8rem;
+
+      &:hover {
+        color: $text-color-2;
+        background-color: $primary-color;
+        border-radius: 40px;
+        transition: all 1s ease-out;
+      }
+    }
+    .burger {
+      display: none;
+    }
+    @media screen and (max-width: 650px) {
+      .desktop-menu {
+        display: none;
+      }
+      h1 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .burger {
+        display: block;
+        position: absolute;
+        right: 0;
+        padding-right: 2rem;
+        font-size: 1.5rem;
+        z-index: 100;
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+  @media screen and (max-width: 650px) {
+    .mobile-menu {
+      position: absolute;
+      background-color: $background-color-2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      transition: transform 1s ease;
+      @include flex(flex-start, center, row);
+
+      ul {
+        height: 60%;
+        li {
+          border-bottom: 1px solid $text-color-2;
+          &:hover {
+            border-bottom: 1px solid $background-color-2;
+            border-radius: 40px;
+            transition: all 0.6s ease;
+          }
+        }
+        @include flex(space-around, center, column);
+      }
+    }
+    .openMenu {
+      transform: translate(0, 0);
+    }
+    .closeMenu {
+      transform: translate(0, -100%);
+    }
+  }
+}
+
+@keyframes slide-1 {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}
