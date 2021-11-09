@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcMenu } from "react-icons/fc";
 
@@ -8,7 +8,7 @@ const Nav = () => {
     setTriggerMenu(!triggerMenu);
   };
   const initialMenuHandler = () => {
-    if (triggerMenu == true) setTriggerMenu(!triggerMenu);
+    if (triggerMenu === true) setTriggerMenu(!triggerMenu);
   };
   const navigate = useNavigate();
   const renegadeClickHandler = (e) => {
