@@ -18,7 +18,7 @@ function App() {
   const fetchGames = async () => {
     try {
       const res = await axios.get(
-        "https://api.rawg.io/api/games?key=8b80a56c189a43e89fefe40c3d583b2f"
+        `https://api.rawg.io/api/games?key=${process.env.REACT_APP_GAME_API}`
       );
       const data = await res.data;
       setGameData(data.results);
