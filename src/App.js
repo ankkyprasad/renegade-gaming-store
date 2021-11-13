@@ -14,6 +14,8 @@ import "./styles/App.scss";
 
 function App() {
   const [gameData, setGameData] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [added, setAdded] = useState(false);
 
   const fetchGames = async () => {
     try {
@@ -22,7 +24,6 @@ function App() {
       );
       const data = await res.data;
       setGameData(data.results);
-      console.log(data.results);
     } catch (err) {
       console.log(err);
     }
@@ -34,10 +35,21 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav added={added} />
       <Routes>
-        <Route path="/" exact element={<Home gameData={gameData} />} />
-        <Route path="/cart" exact element={<Cart />} />
+        <Route
+          path="/"
+          exact
+          element={
+            <Home
+              gameData={gameData}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+              setAdded={setAdded}
+            />
+          }
+        />
+        <Route path="/cart" exact element={<Cart cartItems={cartItems} />} />
         <Route path="/account" exact element={<Account />} />
       </Routes>
       <Foot />

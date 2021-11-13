@@ -1,4 +1,39 @@
-const Card = ({ imageURL, name, year, rating }) => {
+const Card = ({
+  imageURL,
+  name,
+  year,
+  rating,
+  cartItems,
+  setCartItems,
+  id,
+  setAdded,
+}) => {
+  const buyNowHandler = () => {
+    let found = false;
+    setAdded(true);
+    setTimeout(() => {
+      setAdded(false);
+    }, 900);
+    for (let i = 0; i < cartItems.length; i++) {
+      let item = cartItems[i];
+      if (item.id === id) {
+        found = true;
+        item.quantity += 1;
+        break;
+      }
+    }
+    if (found) return;
+
+    setCartItems([
+      ...cartItems,
+      {
+        name: name,
+        background_image: imageURL,
+        quantity: 1,
+        id: id,
+      },
+    ]);
+  };
   return (
     <div className="card">
       <div className="background-image">
@@ -15,7 +50,7 @@ const Card = ({ imageURL, name, year, rating }) => {
           </h5>
         </div>
       </div>
-      <button>Buy Now</button>
+      <button onClick={buyNowHandler}>Buy Now</button>
     </div>
   );
 };

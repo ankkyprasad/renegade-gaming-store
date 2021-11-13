@@ -1,13 +1,13 @@
 .cart {
-  min-height: 90vh;
+  min-height: 83vh;
   background-color: $background-color-1;
   section {
     width: 90%;
     margin: auto;
-    padding-top: 2.5rem;
+    padding: 2.5rem 0;
     ul {
       @include flex(space-around, center);
-      color: $text-color-2;
+      color: $text-color-1;
       letter-spacing: 0.1rem;
       text-transform: uppercase;
       font-size: 0.8rem;
@@ -75,14 +75,14 @@
     h4 {
       flex: 1 1 40rem;
       font-weight: 400;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.2rem;
+      font-size: 0.9rem;
     }
     div {
       flex: 1 1 40rem;
     }
     .quantity {
       color: $text-color-2;
-      font-weight: 600;
     }
   }
 }

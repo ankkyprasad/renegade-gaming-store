@@ -1,16 +1,7 @@
 import React from "react";
 import CartItem from "../components/CartItem";
 
-const Cart = () => {
-  const data = [
-    {
-      id: 3498,
-      name: "Grand Theft Auto V",
-      background_image:
-        "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-      quantity: 4,
-    },
-  ];
+const Cart = ({ cartItems }) => {
   return (
     <main className="cart">
       <section>
@@ -20,18 +11,14 @@ const Cart = () => {
           <li>Quatity</li>
           <li>Total</li>
         </ul>
-        <CartItem
-          name={data[0].name}
-          image={data[0].background_image}
-          price={data[0].id}
-          quantity={data[0].quantity}
-        />
-        <CartItem
-          name={data[0].name}
-          image={data[0].background_image}
-          price={data[0].id}
-          quantity={data[0].quantity}
-        />
+        {cartItems.map((item) => (
+          <CartItem
+            name={item.name}
+            image={item.background_image}
+            price={item.id}
+            quantity={item.quantity}
+          />
+        ))}
       </section>
     </main>
   );
