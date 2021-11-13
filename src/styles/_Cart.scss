@@ -27,6 +27,18 @@
     @include flex(space-around, center);
     padding-top: 1.3rem;
     padding-left: 2rem;
+    &:hover {
+      .product-image {
+        transition: all 0.3s ease-in;
+        border: 3px solid $primary-color;
+        h4 {
+          opacity: 1;
+        }
+        img {
+          opacity: 0.4;
+        }
+      }
+    }
 
     .product-name {
       min-height: 20vh;
@@ -40,17 +52,6 @@
         position: absolute;
         overflow: hidden;
         border-radius: 5px;
-        &:hover {
-          h4 {
-            opacity: 1;
-          }
-          img {
-            opacity: 0.4;
-          }
-          transition: all 0.3s ease-in;
-          border: 3px solid $primary-color;
-          cursor: pointer;
-        }
       }
       img {
         position: absolute;
