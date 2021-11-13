@@ -4,7 +4,7 @@ import axios from "axios";
 
 // importing pages
 import Home from "./pages/Home";
-import Games from "./pages/Games";
+import Cart from "./pages/Cart";
 import Account from "./pages/Account";
 import Nav from "./components/Nav";
 import Foot from "./components/Foot";
@@ -22,6 +22,7 @@ function App() {
       );
       const data = await res.data;
       setGameData(data.results);
+      console.log(data.results);
     } catch (err) {
       console.log(err);
     }
@@ -36,7 +37,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" exact element={<Home gameData={gameData} />} />
-        <Route path="/games/*" exact element={<Games />} />
+        <Route path="/cart" exact element={<Cart />} />
         <Route path="/account" exact element={<Account />} />
       </Routes>
       <Foot />

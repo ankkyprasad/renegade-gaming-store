@@ -27,7 +27,7 @@ const Nav = () => {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="games">Games</Link>
+                <Link to="cart">Cart</Link>
               </li>
               <li>
                 <Link to="account">Account</Link>
@@ -50,8 +50,8 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <Link to="games" onClick={initialMenuHandler}>
-                Games
+              <Link to="cart" onClick={initialMenuHandler}>
+                Cart
               </Link>
             </li>
             <li>
