@@ -17,6 +17,7 @@ const Cart = ({ cartItems }) => {
             image={item.background_image}
             price={item.id}
             quantity={item.quantity}
+            key={item.id}
           />
         ))}
       </section>

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcMenu } from "react-icons/fc";
-import { FaCheckCircle } from "react-icons/fa";
 
-const Nav = ({ added }) => {
+const Nav = () => {
   const [triggerMenu, setTriggerMenu] = useState(false);
   const triggerMenuHandler = () => {
     setTriggerMenu(!triggerMenu);
@@ -62,14 +61,14 @@ const Nav = ({ added }) => {
             </li>
           </ul>
         </div>
-        <div className={added ? "added-to-cart added" : "added-to-cart"}>
+        {/* <div className={added ? "added-to-cart added" : "added-to-cart"}>
           <h2>
             <span>
               <FaCheckCircle />
             </span>
             added
           </h2>
-        </div>
+        </div> */}
       </div>
     </header>
   );

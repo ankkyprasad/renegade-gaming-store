@@ -1,7 +1,13 @@
 import React from "react";
 
 const Account = () => {
-  return <div>account</div>;
+  return (
+    <main className="account">
+      <section>
+        <form></form>
+      </section>
+    </main>
+  );
 };
 
 export default Account;

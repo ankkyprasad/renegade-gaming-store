@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../components/Card";
 
-const Home = ({ gameData, cartItems, setCartItems, added, setAdded }) => {
+const Home = ({ gameData, cartItems, setCartItems }) => {
   return (
     <main className="home">
       <section>
@@ -17,7 +17,6 @@ const Home = ({ gameData, cartItems, setCartItems, added, setAdded }) => {
                 setCartItems={setCartItems}
                 id={game.id}
                 key={game.id}
-                setAdded={setAdded}
               />
             ))}
         </div>

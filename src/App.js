@@ -15,7 +15,6 @@ import "./styles/App.scss";
 function App() {
   const [gameData, setGameData] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [added, setAdded] = useState(false);
 
   const fetchGames = async () => {
     try {
@@ -35,7 +34,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav added={added} />
+      <Nav />
       <Routes>
         <Route
           path="/"
@@ -45,7 +44,6 @@ function App() {
               gameData={gameData}
               cartItems={cartItems}
               setCartItems={setCartItems}
-              setAdded={setAdded}
             />
           }
         />

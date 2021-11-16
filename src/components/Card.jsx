@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Card = ({
   imageURL,
   name,
@@ -6,8 +8,8 @@ const Card = ({
   cartItems,
   setCartItems,
   id,
-  setAdded,
 }) => {
+  const [added, setAdded] = useState(false);
   const buyNowHandler = () => {
     let found = false;
     setAdded(true);
@@ -50,7 +52,9 @@ const Card = ({
           </h5>
         </div>
       </div>
-      <button onClick={buyNowHandler}>Buy Now</button>
+      <button onClick={buyNowHandler}>
+        {added ? "Added to cart" : "Buy Now"}
+      </button>
     </div>
   );
 };
