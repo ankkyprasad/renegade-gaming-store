@@ -1,0 +1,84 @@
+.account {
+  min-height: 83vh;
+  background-color: $background-color-1;
+  position: relative;
+  @include flex(center, center);
+  section {
+    width: 20%;
+    .form-container {
+      min-height: 50vh;
+      background-color: rgba(0, 0, 0, 0.233);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 12px;
+      overflow: hidden;
+      .select-account-option {
+        button {
+          padding: 0.9rem 0;
+          width: 50%;
+          height: 100%;
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background-color: $text-color-1;
+          cursor: pointer;
+        }
+        .active-button {
+          background-color: #323d9e98;
+        }
+      }
+      .input-container {
+        // border: 1px solid yellow;
+        width: 70%;
+        margin: 1.5rem auto;
+        input {
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+          background-color: transparent;
+          font-family: "Montserrat", sans-serif;
+          letter-spacing: 1px;
+          color: $text-color-2;
+          margin-top: 2rem;
+          padding: 0rem 0.5rem 0.3rem 0.3rem;
+          font-size: 0.9rem;
+          &:focus {
+            outline: none;
+          }
+        }
+        ::placeholder {
+          color: rgba(255, 255, 255, 0.527);
+        }
+        form {
+          text-align: center;
+        }
+        button {
+          padding: 0.9rem 0;
+          width: 100%;
+          height: 100%;
+          font-size: 0.8rem;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background-color: $text-color-1;
+          cursor: pointer;
+          margin-top: 1rem;
+          &:hover {
+            transition: all 0.3s ease-out;
+            background-color: #3242d3f1;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1300px) {
+      width: 30%;
+    }
+    @media screen and (max-width: 860px) {
+      width: 40%;
+    }
+    @media screen and (max-width: 650px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 450px) {
+      width: 80%;
+    }
+  }
+}

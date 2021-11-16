@@ -19,6 +19,7 @@ $background-color-2: #23252c;
 @import "Footer";
 @import "NavStyle";
 @import "Cart";
+@import "Account";
 
 * {
   margin: 0;
@@ -60,4 +61,13 @@ button {
 
 h5 {
   color: $text-color-2;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: transparent;
 }
